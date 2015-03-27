@@ -152,7 +152,7 @@ Frame.prototype = {
 
         // Return the number of available pins left in this frame (used for next roll)
         // If a strike was bowled, the available pins are 10 as they belong to the next, fresh frame
-        return this.isStrike() ? 10 : (10 - this.getScore());
+        return this.isStrike() || this.isFinished() ? 10 : (10 - this.getScore());
     }
 };
 
