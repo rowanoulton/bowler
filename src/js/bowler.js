@@ -25,4 +25,5 @@ onBowl = function () {
     bowlingGame.roll();
 };
 
+// Attach listener to DOM load event
 document.addEventListener('DOMContentLoaded', onLoad);
