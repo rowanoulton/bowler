@@ -122,9 +122,9 @@ Game.prototype = {
      */
     getHTML: function () {
         var scoreString = this.getScore().toString(),
+            html = template,
             framesString = '',
-            iterator,
-            html;
+            iterator;
 
         for (iterator = 0; iterator < this.frames.length; iterator++) {
             framesString += this.frames[iterator].getHTML();
