@@ -5,8 +5,10 @@
   "devDependencies": {
     "browserify": "^9.0.3",
     "gulp": "^3.8.11",
+    "gulp-jasmine": "^2.0.0",
     "gulp-sourcemaps": "^1.5.1",
     "gulp-uglify": "^1.1.0",
+    "jasmine-reporters": "^2.0.5",
     "vinyl-transform": "^1.0.0"
   },
   "scripts": {
