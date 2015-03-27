@@ -1,5 +1,7 @@
 'use strict';
 
+var template = '<ul>{{frames}}</ul><p>Score: {{score}}</p>';
+
 var Frame = require('./frame');
 
 /**
@@ -111,6 +113,27 @@ Game.prototype = {
      */
     getFrames: function () {
         return this.frames;
+    },
+
+    /**
+     * Returns a string of HTML representing the game state
+     * @method getHTML
+     * @returns {String}
+     */
+    getHTML: function () {
+        var scoreString = this.getScore().toString(),
+            framesString = '',
+            iterator,
+            html;
+
+        for (iterator = 0; iterator < this.frames.length; iterator++) {
+            framesString += this.frames[iterator].getHTML();
+        }
+
+        html = html.replace('{{frames}}', framesString);
+        html = html.replace('{{score}}', scoreString);
+
+        return html;
     }
 };
 
