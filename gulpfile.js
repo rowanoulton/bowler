@@ -19,9 +19,9 @@ gulp.task('watch', function () {
 gulp.task('build', ['javascript', 'css']);
 
 gulp.task('css', function () {
-    gulp.src('./src/css/bowler.scss')
+    gulp.src('./src/scss/bowler.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/css'));
 });
