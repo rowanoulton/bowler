@@ -169,10 +169,22 @@ Frame.prototype = {
             roll2String = '',
             html = template;
 
-        if (this.rolls.length > 0) roll1String = this.rolls[0];
-        if (this.rolls.length > 1) roll2String = this.rolls[1];
-        if (score > 0) scoreString = score.toString();
+        // If there is at least one roll
+        if (this.rolls.length > 0) {
+            // Display is special in case of a strike
+            roll1String = this.isStrike() ? 'X' : this.rolls[0];
+        }
 
+        // If there are at least 2 rolls
+        if (this.rolls.length > 1) {
+            // Display is special in case of a spare
+            roll2String = this.isSpare() ? '/' : this.rolls[1];
+        }
+
+        // Avoid displaying non-zero scores unless frame is finished
+        if (score > 0 || this.isFinished()) scoreString = score.toString();
+
+        // Hacky string replacement to fill in template string
         html = html.replace('{{roll1}}', roll1String);
         html = html.replace('{{roll2}}', roll2String);
         html = html.replace('{{score}}', scoreString);
