@@ -26,8 +26,7 @@ Game.prototype = {
      * @method roll
      */
     roll: function () {
-        var rollNumber = this.getRandomNumber(this.pinsLeftInFrame);
-
+        var rollNumber = this.getRandomRoll(this.pinsLeftInFrame);
         this.pinsLeftInFrame = this.frames[0].roll(rollNumber);
 
         if (this.isFinished()) {
@@ -71,11 +70,11 @@ Game.prototype = {
 
     /**
      * Returns a "random" whole number up to a given maximum
-     * @method getRandomNumber
+     * @method getRandomRoll
      * @param {Number} max The largest acceptable random number
      * @returns {Number}
      */
-    getRandomNumber: function (max) {
+    getRandomRoll: function (max) {
         return Math.floor(Math.random() * (max + 1));
     },
 
