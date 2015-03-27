@@ -6,3 +6,4 @@ node_modules/
 
 # Generated assets
 dist/js/
+dist/css/
