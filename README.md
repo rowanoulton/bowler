@@ -73,6 +73,11 @@ gulp test
 
 For development, I recommend use of the watch task (`gulp watch`). It will build and re-run tests whenever you make changes to the source Javascript files (tests included).
 
+#### Areas for improvement
+
+- Rendering: The current implementation of rendering is super crude. It redraws the entire list of frames after each move which leaves much room for improvement
+- Cumulative scoring: At present, each frame only renders its own score. Typically, bowling scorers show a cumulative total in each frame
+- Functional tests
 
 #### License
 
