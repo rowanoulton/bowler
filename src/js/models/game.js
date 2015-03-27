@@ -1,6 +1,6 @@
 'use strict';
 
-var template = '<ul>{{frames}}</ul><p>Score: {{score}}</p>';
+var template = '<ul>{{frames}}</ul><p class="frame-total-score">Overall Score <span class="frame-total-score-figure">{{score}}</span></p>';
 
 var Frame = require('./frame');
 
