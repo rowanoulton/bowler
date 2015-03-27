@@ -7,9 +7,13 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     jasmine = require('gulp-jasmine');
 
-gulp.task('default', ['javascript']);
+gulp.task('default', ['build', 'watch']);
 
-gulp.task('javascript', function () {
+gulp.task('watch', function () {
+    gulp.watch('./src/js/**/*.js', ['test']);
+});
+
+gulp.task('build', function () {
     var browserified = transform(function (filename) {
         var b = browserify({ entries: filename, debug: true });
         return b.bundle();
@@ -23,13 +27,7 @@ gulp.task('javascript', function () {
         .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('test', function () {
-    var browserified = transform(function (filename) {
-        var b = browserify({ entries: filename, debug: true });
-        return b.bundle();
-    });
-
+gulp.task('test', ['build'], function () {
     return gulp.src('./spec/**/*.js')
-        .pipe(browserified)
         .pipe(jasmine());
 });
