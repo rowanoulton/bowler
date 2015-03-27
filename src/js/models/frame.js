@@ -1,5 +1,7 @@
 'use strict';
 
+var template = '<li>{{row1}} / {{row2}} ({{score}})</li>';
+
 /**
  * @class Frame
  * @constructor
@@ -153,6 +155,29 @@ Frame.prototype = {
         // Return the number of available pins left in this frame (used for next roll)
         // If a strike was bowled, the available pins are 10 as they belong to the next, fresh frame
         return this.isStrike() || this.isFinished() ? 10 : (10 - this.getScore());
+    },
+
+    /**
+     * Return a string of HTML representing the frame
+     * @method getHTML
+     * @returns {String}
+     */
+    getHTML: function () {
+        var score = this.getScore(),
+            scoreString = '',
+            roll1String = '',
+            roll2String = '',
+            html = template;
+
+        if (this.rolls[0]) roll1String = this.rolls[0];
+        if (this.rolls[1]) roll2String = this.rolls[1];
+        if (score > 0) scoreString = score.toString();
+
+        html = html.replace('{{roll1}}', roll1String);
+        html = html.replace('{{roll2}}', roll2String);
+        html = html.replace('{{score}}', scoreString);
+
+        return html;
     }
 };
 
