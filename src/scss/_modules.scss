@@ -1,0 +1,5 @@
+@import "modules/game/rules";
+@import "modules/frame/rules";
+
+@include bowler-game;
+@include bowler-frame;
