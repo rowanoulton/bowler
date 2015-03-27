@@ -1,6 +1,8 @@
 var Game = require('./models/game'),
+    gameRenderElement,
     bowlingGame,
     bowlingBtn,
+    renderGame,
     onFinish,
     onBowl,
     onLoad;
@@ -9,11 +11,20 @@ var Game = require('./models/game'),
 bowlingGame = new Game();
 
 /**
+ * Render the game state to the appropriate element
+ * @method renderGame
+ */
+renderGame = function () {
+    gameRenderElement.innerHTML = bowlingGame.getHTML();
+};
+
+/**
  * Set up bowling game on document load
  * @method onLoad
  */
 onLoad = function () {
     bowlingGame.init();
+    gameRenderElement = document.getElementById('game');
     bowlingBtn = document.getElementById('bowling-btn');
     bowlingBtn.addEventListener('click', onBowl, false);
 };
@@ -24,6 +35,7 @@ onLoad = function () {
  */
 onBowl = function () {
     bowlingGame.roll();
+    renderGame();
 
     if (bowlingGame.isFinished()) {
         onFinish();
