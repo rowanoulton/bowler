@@ -1,5 +1,7 @@
 var Game = require('./models/game'),
     bowlingGame,
+    bowlingBtn,
+    onBowl,
     onLoad;
 
 // Create instance of bowling game
@@ -10,8 +12,17 @@ bowlingGame = new Game();
  * @method onLoad
  */
 onLoad = function () {
-    // Initialize bowling game
     bowlingGame.init();
+    bowlingBtn = document.getElementById('bowling-btn');
+    bowlingBtn.addEventListener('click', onBowl, false);
+};
+
+/**
+ * Roll a bowling pin
+ * @method onBowl
+ */
+onBowl = function () {
+    bowlingGame.roll();
 };
 
 document.addEventListener('DOMContentLoaded', onLoad);
