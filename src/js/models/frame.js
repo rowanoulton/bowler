@@ -1,6 +1,6 @@
 'use strict';
 
-var template = '<li>{{roll1}} / {{roll2}} ({{score}})</li>';
+var template = '<li class="frame"><span class="frame-roll frame-roll--first">{{roll1}}</span><span class="frame-roll frame-roll--second">{{roll2}}</span><span class="frame-score">{{score}}</span></li>';
 
 /**
  * @class Frame
