@@ -30,7 +30,7 @@ Game.prototype = {
 
         this.pinsLeftInFrame = this.frames[0].roll(rollNumber);
 
-        if (this.pinsLeftInFrame === 0) {
+        if (this.isFinished()) {
             // If there are no pins left in the frame, the game is finished
             this.finish();
         }
@@ -58,6 +58,15 @@ Game.prototype = {
         }
 
         return score;
+    },
+
+    /**
+     * Returns true if the game is finished
+     * @method isFinished
+     * @returns {Boolean}
+     */
+    isFinished: function () {
+        return this.pinsLeftInFrame === 0;
     },
 
     /**
