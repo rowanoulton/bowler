@@ -18,7 +18,7 @@ Game.prototype = {
      * @method init
      */
     init: function () {
-        this.frames = this.createFrames();
+        this.setFrames(this.createFrames());
     },
 
     /**
@@ -93,6 +93,24 @@ Game.prototype = {
         }
 
         return frames;
+    },
+
+    /**
+     * Set the frames for the game
+     * @method setFrames
+     * @param {Array} frames An array of 10 properly-linked frames
+     */
+    setFrames: function (frames) {
+        this.frames = frames;
+    },
+
+    /**
+     * Get the frames for the game
+     * @method getFrames
+     * @returns {Array}
+     */
+    getFrames: function () {
+        return this.frames;
     }
 };
 
