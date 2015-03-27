@@ -1,6 +1,7 @@
 var Game = require('./models/game'),
     bowlingGame,
     bowlingBtn,
+    onFinish,
     onBowl,
     onLoad;
 
@@ -23,6 +24,20 @@ onLoad = function () {
  */
 onBowl = function () {
     bowlingGame.roll();
+
+    if (bowlingGame.isFinished()) {
+        onFinish();
+    }
+};
+
+/**
+ * Complete the game
+ * @method onFinish
+ */
+onFinish = function () {
+    // Get rid of the "Bowl" button
+    bowlingBtn.parentNode.removeChild(bowlingBtn);
+    console.log('Finished with a score of ' + bowlingGame.getScore());
 };
 
 // Attach listener to DOM load event
