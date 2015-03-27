@@ -10,10 +10,8 @@ bowlingGame = new Game();
  * @method onLoad
  */
 onLoad = function () {
-    // Initialise bowling game
+    // Initialize bowling game
     bowlingGame.init();
-
-    console.log(bowlingGame);
 };
 
 document.addEventListener('DOMContentLoaded', onLoad);
