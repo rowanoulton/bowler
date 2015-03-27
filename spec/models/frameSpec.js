@@ -198,15 +198,23 @@ describe('Frame', function () {
             expect(nextFrame.isCurrentFrame()).toEqual(true);
         });
 
-        it('should return false if the game is unfinished', function () {
+        it('should return the available number of pins if the game is unfinished', function () {
             this.model.setCurrentFrame(true);
-            expect(this.model.roll(5)).toEqual(false);
+            expect(this.model.roll(5)).toEqual(5);
         });
 
-        it('should return true if the game is finished', function () {
+        it('should return "10" if a strike is bowled, as the next frame has 10 available pins', function () {
+            var nextFrame = new Frame();
+
+            this.model.setCurrentFrame(true);
+            this.model.setNextFrame(nextFrame);
+            expect(this.model.roll(10)).toEqual(10);
+        });
+
+        it('should return zero if the game is finished', function () {
             this.model.setCurrentFrame(true);
             this.model.roll(5);
-            expect(this.model.roll(3)).toEqual(true);
+            expect(this.model.roll(3)).toEqual(0);
         });
 
         it('should pass the roll to the next frame if it is no longer the current frame', function () {
