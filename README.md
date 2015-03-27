@@ -37,7 +37,7 @@ Through this process, the game progresses through each frame until the last. The
 
 #### Disadvantages of this approach
 
-There are a number of disadvantages to this approach:
+There are a number of disadvantages to this approach, some of which are:
 
 - All frames must be created and linked to their neighbour at the beginning of the game
 - The last frame is responsible for communicating game completion, which should ideally be a responsibility of the game class itself
