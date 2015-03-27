@@ -43,6 +43,35 @@ There are a number of disadvantages to this approach, some of which are:
 - The last frame is responsible for communicating game completion, which should ideally be a responsibility of the game class itself
 - The list must be traversed in order to calculate the total score as the game progresses
 
+#### Setup
+
+To get started, you will need to install the dependencies with [npm](https://nodejs.org/):
+
+```
+npm install
+```
+
+If you don't have gulp installed globally, you will also need to do so:
+
+```
+npm install -g gulp
+```
+
+Once installed, you can generate the needed assets with gulp:
+
+```
+gulp build
+```
+
+Or run the unit tests (which will also perform a build):
+
+```
+gulp test
+```
+
+For development, I recommend use of the watch task (`gulp watch`). It will build and re-run tests whenever you make changes to the source Javascript files (tests included).
+
+
 #### License
 
 [MIT](https://github.com/rowanoulton/bowler/blob/master/LICENSE). Use as you please!
