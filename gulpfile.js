@@ -5,16 +5,26 @@ var gulp = require('gulp'),
     transform = require('vinyl-transform'),
     uglify = require('gulp-uglify'),
     sourcemaps = require('gulp-sourcemaps'),
-    jasmine = require('gulp-jasmine');
+    jasmine = require('gulp-jasmine'),
+    sass = require('gulp-sass');
 
 gulp.task('default', ['build', 'watch']);
 
 gulp.task('watch', function () {
     gulp.watch('./src/js/**/*.js', ['test']);
     gulp.watch('./spec/**/*.js', ['test']);
+    gulp.watch('./src/scss/**/*.scss', ['css']);
 });
 
-gulp.task('build', ['javascript']);
+gulp.task('build', ['javascript', 'css']);
+
+gulp.task('css', function () {
+    gulp.src('./src/css/bowler.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./dist/css'));
+});
 
 gulp.task('javascript', function () {
     var browserified = transform(function (filename) {
