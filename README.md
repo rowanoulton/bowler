@@ -1,6 +1,8 @@
 # Bowler
 A simple browser-based system for scoring a game of bowling.
 
+![A simple browser-based system for scoring a game of bowling](https://dl.dropboxusercontent.com/u/1432453/Github/Bowler/bowler-0.png)
+
 #### Rules of the game
 
 - A game consists of 10 frames.
