@@ -1,1 +1,1 @@
-var Frame = require('./modules/frame.js');
+var Frame = require('./models/frame.js');
