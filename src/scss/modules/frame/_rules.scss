@@ -52,4 +52,17 @@
         right: 0;
         font-size: 18px;
     }
+
+    .frame-total-score {
+        margin-bottom: 20px;
+    }
+
+    .frame-total-score-figure {
+        display: block;
+        margin-top: 5px;
+        font: {
+            size: 28px;
+            weight: 700;
+        }
+    }
 }
