@@ -113,7 +113,7 @@ Frame.prototype = {
      * that strike/spare.
      * @method roll
      * @param {Number} number
-     * @returns {Boolean}
+     * @returns {Number}
      */
     roll: function (number) {
         // Are we the current frame of the game?
@@ -145,13 +145,14 @@ Frame.prototype = {
                 // Move game to next frame
                 this.enterNextFrame();
             } else {
-                // Return true as game is finished
-                return true;
+                // Returning zero signifies the game is finished
+                return 0;
             }
         }
 
-        // Return false as game is unfinished
-        return false;
+        // Return the number of available pins left in this frame (used for next roll)
+        // If a strike was bowled, the available pins are 10 as they belong to the next, fresh frame
+        return this.isStrike() ? 10 : (10 - this.getScore());
     }
 };
 
