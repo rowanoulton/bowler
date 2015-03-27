@@ -1,0 +1,14 @@
+// .frame
+$frame-width: 75px !default;
+$frame-height: $frame-width !default;
+$frame-padding: 10px !default;
+$frame-border-width: 1px !default;
+$frame-border-color: #ccc !default;
+
+// .frame-roll
+$frame-roll-border-color: $frame-border-color !default;
+$frame-roll-border-width: $frame-border-width !default;
+$frame-roll-padding: 10px !default;
+
+// .frame-score
+$frame-score-border-width: $frame-padding !default;

@@ -1,19 +1,21 @@
+@import "./_variables.scss";
+
 @mixin bowler-frame {
     .frame {
         list-style: none;
         display: inline-block;
         box-sizing: border-box;
-        width: 75px;
-        height: 75px;
-        padding: 10px;
-        border-width: 1px;
-        border-color: #ccc;
+        width: $frame-width;
+        height: $frame-height;
+        padding: $frame-padding;
+        border-width: $frame-border-width;
+        border-color: $frame-border-color;
         border-style: solid;
         border-right-width: 0;
         position: relative;
 
         &:last-of-type {
-            border-right-width: 1px;
+            border-right-width: $frame-border-width;
         }
     }
 
@@ -22,7 +24,7 @@
     }
 
     .frame-roll--first {
-        top: 10px;
+        top: $frame-roll-padding;
         left: 15px;
     }
 
@@ -32,10 +34,10 @@
         height: 35px;
         right: 0;
         top: 0;
-        padding: 10px;
+        padding: $frame-roll-padding;
         border-style: solid;
-        border-color: #ccc;
-        border-width: 0 0 1px 1px;
+        border-color: $frame-roll-border-color;
+        border-width: 0 0 $frame-roll-border-width $frame-roll-border-width;
         display: inline-block;
     }
 
@@ -45,7 +47,7 @@
         position: absolute;
         width: 100%;
         text-align: center;
-        bottom: 10px;
+        bottom: $frame-score-border-width;
         left: 0;
         right: 0;
         font-size: 18px;
