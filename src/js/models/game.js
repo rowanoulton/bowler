@@ -88,7 +88,7 @@ Game.prototype = {
         for (iterator = 0; iterator < 10; iterator++) {
             // First frame begins as the current frame
             if (iterator === 0) {
-                frames[interator].setCurrentFrame(true);
+                frames[iterator].setCurrentFrame(true);
             }
 
             // All frames (bar the last) must contain a pointer to the next frame in the list
