@@ -28,19 +28,6 @@ Game.prototype = {
     roll: function () {
         var rollNumber = this.getRandomRoll(this.pinsLeftInFrame);
         this.pinsLeftInFrame = this.frames[0].roll(rollNumber);
-
-        if (this.isFinished()) {
-            // If there are no pins left in the frame, the game is finished
-            this.finish();
-        }
-    },
-
-    /**
-     * Announce the completion of the game
-     * @method finish
-     */
-    finish: function () {
-        console.log('Game finished with a score of ' + this.getScore());
     },
 
     /**
