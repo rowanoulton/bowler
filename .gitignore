@@ -1,0 +1,8 @@
+# Don't ignore .gitignore files (used to keep empty directories)
+!.gitignore
+
+# Node
+node_modules/
+
+# Generated assets
+dist/js/

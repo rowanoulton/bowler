@@ -1,0 +1,25 @@
+{
+  "name": "Bowler",
+  "version": "1.0.0",
+  "description": "A simple browser-based system for scoring a game of bowling",
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-uglify": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rowanoulton/bowler.git"
+  },
+  "author": "Rowan Oulton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rowanoulton/bowler/issues"
+  },
+  "homepage": "https://github.com/rowanoulton/bowler"
+}
