@@ -211,6 +211,15 @@ describe('Frame', function () {
             expect(this.model.roll(10)).toEqual(10);
         });
 
+        it('should return "10" if the frame just bowled against has finished', function () {
+            var nextFrame = new Frame();
+
+            this.model.setCurrentFrame(true);
+            this.model.setNextFrame(nextFrame);
+            this.model.roll(5);
+            expect(this.model.roll(3)).toEqual(10);
+        });
+
         it('should return zero if the game is finished', function () {
             this.model.setCurrentFrame(true);
             this.model.roll(5);
