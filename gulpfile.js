@@ -11,6 +11,7 @@ gulp.task('default', ['build', 'watch']);
 
 gulp.task('watch', function () {
     gulp.watch('./src/js/**/*.js', ['test']);
+    gulp.watch('./spec/**/*.js', ['test']);
 });
 
 gulp.task('build', function () {
