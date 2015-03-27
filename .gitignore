@@ -1,2 +1,5 @@
 # Don't ignore .gitignore files (used to keep empty directories)
 !.gitignore
+
+# For node
+node_modules/
