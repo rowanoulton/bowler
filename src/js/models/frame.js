@@ -169,8 +169,8 @@ Frame.prototype = {
             roll2String = '',
             html = template;
 
-        if (this.rolls[0]) roll1String = this.rolls[0];
-        if (this.rolls[1]) roll2String = this.rolls[1];
+        if (this.rolls.length > 0) roll1String = this.rolls[0];
+        if (this.rolls.length > 1) roll2String = this.rolls[1];
         if (score > 0) scoreString = score.toString();
 
         html = html.replace('{{roll1}}', roll1String);
