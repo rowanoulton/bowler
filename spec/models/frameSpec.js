@@ -48,17 +48,18 @@ describe('Frame', function () {
     });
 
     describe('#isLastFrame', function () {
-        it('should return true if the frame has no next frame reference set', function () {
+        it('should return false if the frame has a reference to the next frame', function () {
             var nextFrame = new Frame();
-
-            // No next frame is set on initialisation, so the result should be true
-            expect(this.model.isLastFrame()).toEqual(true);
 
             // Set next frame reference
             this.model.setNextFrame(nextFrame);
 
             // Next frame is set, function should return false
             expect(this.model.isLastFrame()).toEqual(false);
+        });
+
+        it('should return true if the frame has no reference to the next frame', function () {
+            expect(this.model.isLastFrame()).toEqual(true);
         });
     });
 
