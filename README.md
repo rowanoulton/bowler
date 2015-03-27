@@ -10,3 +10,8 @@ A simple browser-based system for scoring a game of bowling.
 - If the player knocks down all 10 pins in two rolls it’s a spare. The player scores 10 plus the number of pins knocked down in the next roll.
 
 Further details about the way bowling is scored can be sought [here](http://bowling.about.com/od/rulesofthegame/a/bowlingscoring.htm).
+
+
+#### License
+
+[MIT](https://github.com/rowanoulton/bowler/blob/master/LICENSE). Use as you please!
