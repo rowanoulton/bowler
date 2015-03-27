@@ -24,6 +24,12 @@ gulp.task('javascript', function () {
 });
 
 gulp.task('test', function () {
+    var browserified = transform(function (filename) {
+        var b = browserify({ entries: filename, debug: true });
+        return b.bundle();
+    });
+
     return gulp.src('./spec/**/*.js')
+        .pipe(browserified)
         .pipe(jasmine());
 });
