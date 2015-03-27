@@ -1,6 +1,6 @@
 var Frame = require('../../src/js/models/frame');
 
-describe('The frame model', function () {
+describe('Frame', function () {
     beforeEach(function () {
         this.model = new Frame();
     });
