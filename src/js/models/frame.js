@@ -15,6 +15,15 @@ var Frame = function () {
 Frame.prototype = {
 
     /**
+     * Returns the score
+     * @method getScore
+     * @returns {Number}
+     */
+    getScore: function () {
+        return this.score;
+    },
+
+    /**
      * Set flag for whether this is the current frame of the game
      * @method setCurrentFrame
      * @param {Boolean} flag
