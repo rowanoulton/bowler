@@ -2,6 +2,7 @@
 
 @mixin bowler-frame {
     .frame {
+        background: $frame-background-color;
         list-style: none;
         display: inline-block;
         box-sizing: border-box;
