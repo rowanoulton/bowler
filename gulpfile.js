@@ -14,7 +14,9 @@ gulp.task('watch', function () {
     gulp.watch('./spec/**/*.js', ['test']);
 });
 
-gulp.task('build', function () {
+gulp.task('build', ['javascript']);
+
+gulp.task('javascript', function () {
     var browserified = transform(function (filename) {
         var b = browserify({ entries: filename, debug: true });
         return b.bundle();
@@ -28,7 +30,7 @@ gulp.task('build', function () {
         .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('test', ['build'], function () {
+gulp.task('test', ['javascript'], function () {
     return gulp.src('./spec/**/*.js')
         .pipe(jasmine());
 });
