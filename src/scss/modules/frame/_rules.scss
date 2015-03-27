@@ -1,3 +1,53 @@
 @mixin bowler-frame {
+    .frame {
+        list-style: none;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 75px;
+        height: 75px;
+        padding: 10px;
+        border-width: 1px;
+        border-color: #ccc;
+        border-style: solid;
+        border-right-width: 0;
+        position: relative;
 
+        &:last-of-type {
+            border-right-width: 1px;
+        }
+    }
+
+    .frame-roll {
+        position: absolute;
+    }
+
+    .frame-roll--first {
+        top: 10px;
+        left: 15px;
+    }
+
+    .frame-roll--second {
+        box-sizing: border-box;
+        width: 30px;
+        height: 35px;
+        right: 0;
+        top: 0;
+        padding: 10px;
+        border-style: solid;
+        border-color: #ccc;
+        border-width: 0 0 1px 1px;
+        display: inline-block;
+    }
+
+    .frame-score {
+        font-weight: 700;
+        display: block;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        font-size: 18px;
+    }
 }
